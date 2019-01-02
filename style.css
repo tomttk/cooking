@@ -1,0 +1,33 @@
+ul {
+    list-style-type: none; 
+}
+
+.nav-link {
+    padding: 0rem 1rem;
+}
+
+.row, .rowrecette {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#carousel-header {
+    height: 65%;
+}
+
+#imgrecette {
+    height: 25%;
+}
+
+a {
+    color: #A7A37E;
+}
+
+h6, h2, h1, h3, p, ul, li {
+    color: #046380;
+}
+
+p {
+    margin : 0.5em 1em 1em 1em;
+}
