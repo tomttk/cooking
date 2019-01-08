@@ -22,63 +22,64 @@
       <h3>Rechercher une recette, un ingrédient, de l'aide...</h3>
     </div>
     <div class="col-lg-4 col-sm-4">
-    <a class="navbar-brand" href="">
+    <a class="navbar-brand" href="connexion.php">
       <img src="images\round-account-button-with-user-inside.png" width="30" height="30" alt="">
     </a>
-    <a class="navbar-brand" href="https://www.facebook.com">
+    <a class="navbar-brand" href="https://www.facebook.com" target="_blank">
       <img src="images\facebook.png" width="30" height="30" alt="">
     </a>
-    <a class="navbar-brand" href="https://www.twitter.com">
+    <a class="navbar-brand" href="https://www.twitter.com" target="_blank">
       <img src="images\twitter.png" width="30" height="30" alt="">
     </a>
-    <a class="navbar-brand" href="https://www.youtube.com">
+    <a class="navbar-brand" href="https://www.youtube.com" target="_blank">
       <img src="images\youtube.png" width="30" height="30" alt="">
     </a>
-    <a class="navbar-brand" href="https://www.google.com">
+    <a class="navbar-brand" href="https://www.google.com" target="_blank">
       <img src="images\google.png" width="30" height="30" alt="">
     </a>
     </div>
   </div>
 
-<div class="container">
-<header>
-<nav class="navbar navbar-expand-lg" style="background-color: #E6E2AF;">
-<nav class="navbar">
-  <a class="navbar-brand" href="index.php">
-    <img src="images\home-icon-silhouette.png" width="30" height="30" alt="">
-  </a>
-</nav>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Recettes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Menus</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Deserts</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Minceur</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Atelier</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Je recherche" aria-label="Search">
-      <button class="btn my-2 my-sm-0" type="submit"><img src="images\search.png" alt=""></button>
-    </form>
-  </div>
+<header>
+  <div class="row"></div>
+    <nav class="navbar navbar-expand-lg" style="background-color: #BEEB9F;">
+    <nav class="navbar">
+      <a class="navbar-brand" href="index.php">
+        <img src="images\home-icon-silhouette.png" width="30" height="30" alt="">
+      </a>
+    </nav>
+
+      <div class="navbar navbar-default col-lg-8 col-md-4 col-sm-12" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="recettes.php">Recettes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="viande.php">Viande</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="legume.php">Légume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="poisson.php">Poisson</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fruit.php">Fruit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">Contact</a>
+          </li>
+        </ul>
+      </div>
+        <form action="search.php" method="GET" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" name="search" placeholder="Je recherche" aria-label="Search">
+          <button value="Search" class="btn my-2 my-sm-0" name="submit" type="submit"><img src="images\search.png" alt=""></button>
+        </form>
 </nav>
 </header>
 </div>
-
+        
 <?php
 include 'auth.php';
 ?>

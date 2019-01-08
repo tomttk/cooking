@@ -17,17 +17,25 @@ ul {
 }
 
 #imgrecette {
-    height: 25%;
+    height: 15%;
 }
 
 a {
-    color: #A7A37E;
+    color: #00A388;
+    text-decoration: none;
 }
 
-h6, h2, h1, h3, p, ul, li {
+h6, h2, h1, h3, ul {
+    color: #00A388;
+}
+
+p, li {
+    margin : 0.5em 1em 1em 1em;
+    text-decoration: none;
     color: #046380;
 }
 
-p {
-    margin : 0.5em 1em 1em 1em;
+#login-submit, #contactbtn {
+    background-color: #046380;
+    color: white;
 }

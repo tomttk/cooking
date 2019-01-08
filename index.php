@@ -32,117 +32,11 @@ include 'header.php';
     <div class="row" style='background-color : #EFECCA;'>
         <h2>Recettes du jour</h2>
     </div>
+
+    <?php
+        include 'function.php';
+    ?>  
     
-        <?php 
-        // déclaration des funtions
-                function difficulteRecette (){
-                    include 'auth.php';
-                    $result = $pdo->query("SELECT difficulte FROM recettes");
-                $recette = $result->fetch(PDO::FETCH_ASSOC);
-                    if ($recette['difficulte'] == "Facile") {
-                        echo "<div class='col-12'>";
-                        echo "Dificulté : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/fourchette.png'>";
-                        echo '</div>';
-                    }elseif($recette['difficulte'] == "Abordable") {
-                        echo "<div class='col-6'>";
-                        echo "Dificulté : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/fourchette.png'>";
-                        echo '</div>';
-                        
-                        echo "<div class='col-6'>";
-                        echo "Dificulté : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/fourchette.png'>";
-                        echo '</div>';
-                    }else{
-                        echo "A noter";
-                    } 
-                }
-
-               function tempsCuisson (){
-                include 'auth.php';
-                $result = $pdo->query("SELECT tempsCuisson FROM recettes");
-                $recette = $result->fetch(PDO::FETCH_ASSOC);
-                    if ($recette['tempsCuisson'] == "10 min" || '15 min' ) {
-                        echo "<div class='col-12'>";
-                        echo "Cuisson : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images\cuisson.png'>";
-                        echo "</div>";
-                    }elseif($recette['tempsCuisson'] == "30 min" || "45 min") {
-                        echo "<div class='col-6'>";
-                        echo "Cuisson : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images\cuisson.png'>";
-                        echo "</div>";
-
-                        echo "<div class='col-6'>";
-                        echo "Cuisson : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images\cuisson.png'>";
-                        echo "</div>";
-                    }elseif($recette['tempsCuisson'] == "1h 40 min" || "1h 30 min") {
-                        echo "<div class='col-4'>";
-                        echo "Cuisson : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images\cuisson.png'>";
-                        echo "</div>";
-
-                        echo "<div class='col-4'>";
-                        echo "Cuisson : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images\cuisson.png'>";
-                        echo "</div>";
-
-                        echo "<div class='col-4'>";
-                        echo "Cuisson : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images\cuisson.png'>";
-                        echo "</div>";
-                    }else{
-                        echo "A noter";
-                    }
-                }
-
-                function tempsPreparation (){
-                    include 'auth.php';
-                    $result = $pdo->query("SELECT tempsPreparation FROM recettes");
-                    $recette = $result->fetch(PDO::FETCH_ASSOC);
-                        if ($recette['tempsPreparation'] == '15 min') {
-                            echo "<div class='col-12'>";
-                            echo "Préparation : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/temps.png'>";
-                            echo "</div>";
-                        }elseif($recette['tempsPreparation'] == "30 min" || "35 min") {
-                            echo "<div class='col-6'>";
-                            echo "Préparation : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/temps.png'>";
-                            echo "</div>";
-
-                            echo "<div class='col-6'>";
-                            echo "Préparation : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/temps.png'>";
-                            echo "</div>";
-                        }elseif($recette['tempsPreparation'] == "40 min") {
-                            echo "<div class='col-4'>";
-                            echo "Préparation : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/temps.png'>";
-                            echo "</div>";
-
-                            echo "<div class='col-4'>";
-                            echo "Préparation : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/temps.png'>";
-                            echo "</div>";
-
-                            echo "<div class='col-4'>";
-                            echo "Préparation : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/temps.png'>";
-                            echo "</div>";
-                        }else{
-                            echo "A noter";
-                        }
-                    }
-
-                    function prix (){
-                        include 'auth.php';
-                        $result = $pdo->query("SELECT prix FROM recettes");
-                        $recette = $result->fetch(PDO::FETCH_ASSOC);
-                            if ($recette['prix'] == 'Pas cher') {
-                                echo "<div class='col-12'>";
-                                echo "Prix : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/prix.png'>";
-                                echo "</div>";
-                            }elseif($recette['prix'] == "Abordable") {
-                                echo "<div class='col-6'>";
-                                echo "Prix : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/prix.png'>";
-                                echo "</div>";
-
-                                echo "<div class='col-6'>";
-                                echo "Prix : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/prix.png'>";
-                                echo "</div>";
-                            }else{
-                                echo "A noter";
-                            }
-                        }
-                ?>
 <div style='background-color : #EFECCA;' class="row">
         <div class="col-lg-3 col-sm-6 text-center">
                 <?php
@@ -202,7 +96,7 @@ include 'header.php';
                 $result = $pdo->query("SELECT * FROM recettes WHERE idRecette='4'");
                 $recette = $result->fetch(PDO::FETCH_ASSOC);
                 $image = "photos/recettes/".$recette['img'];
-                echo "<a href='recette-detail.php?idRecette=3'>";
+                echo "<a href='recette-detail.php?idRecette=4'>";
                 echo "<img class='rounded img-thumbnail col-12' src=".$image;
                 ?>
                 <?php echo '<p>'.$recette['titre'].'</p>';
@@ -225,7 +119,7 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=4'>";
-                echo "<img class='rounded img-thumbnail col-12' style='width : 100px; height : 100px;' src='".$gravatar;
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
                 echo '</a>';
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
                 ?>
@@ -237,7 +131,7 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=2'>";
-                echo "<img class='rounded img-thumbnail col-12' style='width : 100px; height : 100px;' src='".$gravatar;
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
                 echo '</a>';
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
                 ?>
@@ -249,7 +143,7 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=3'>";
-                echo "<img div='carousel-header' class='rounded img-thumbnail col-12' style='width : 100px; height : 100px;' src='".$gravatar;
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
                 echo '</a>';
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
                 ?>
@@ -261,9 +155,10 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=6'>";
-                echo "<img class='rounded img-thumbnail col-12' style='width : 100px; height : 100px;' src='".$gravatar;
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
                 echo '</a>';
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
+                echo '</a>';
                 ?>
         </div>
 

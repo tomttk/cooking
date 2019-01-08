@@ -2,19 +2,21 @@
 include 'header.php';
 ?>
 <head>
-    <title>recette</title>
+    <title>Recette</title>
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <div class="rowrecette" style='background-color : #EFECCA;'>
+    <br>
+    <div class="row" style='background-color : #EFECCA;'>
+    
+        <div class="rowrecette">
             <?php
             include 'auth.php';
             $myinputs = filter_input(INPUT_GET, 'idRecette');
                 $result = $pdo->query("SELECT * FROM recettes WHERE idRecette='$myinputs'");
                 $recette = $result->fetch(PDO::FETCH_ASSOC);
                 $image = 'photos/recettes/'.$recette['img']."'";
-                echo "<img id='imgrecette' class='rounded img-thumbnail col-12' src='".$image;
+                echo "<img id='imgrecette' class='rounded img-thumbnail col-lg-12 col-sm-6' src='".$image;
                 echo '<p class="col-12">';
                 echo '<h1>';
                 echo $recette['titre'];
@@ -38,7 +40,24 @@ include 'header.php';
                 echo '<p>';
                 echo $recette['preparation'];
                 echo '</p>';
-    
+            
+                
+                $result = $pdo->query("SELECT recettes.membre, membres.idMembre, membres.nom, membres.prenom, membres.gravatar FROM recettes, membres WHERE membres.idMembre = recettes.membre AND idRecette='$myinputs'");
+                $membres = $result->fetch(PDO::FETCH_ASSOC);
+                $gravatar = "photos/gravatars/".$membres['gravatar']."'";
+               
+                echo '<br>';
+                echo '<div class="text-left">';
+                echo '<div class="col-12">';
+                echo "<h6>Recette créée par :</h6>";
+                echo "<a class='col-12' href='membre-detail.php?idMembre=".$membres['membre']."'>";
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
+                echo "</div>";
+                echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
+                echo '</a>';
+                echo "</div>";
+
+                
             ?>
         </div>
         </div>
