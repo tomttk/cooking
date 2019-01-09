@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col-lg-2 col-sm-4">
     <a class="navbar-brand" href="index.php">
-    <img src="images\logo-cooking.png" width="150" height="50" alt="logo">
+    <img src="images/logo-cooking.png" width="150" height="50" alt="logo">
     </a>
     </div>
     <div class="col-lg-6 col-sm-4">
@@ -24,19 +24,19 @@
     </div>
     <div class="col-lg-4 col-sm-4">
     <a class="navbar-brand" href="connexion.php">
-      <img src="images\round-account-button-with-user-inside.png" width="30" height="30" alt="">
+      <img src="images/round-account-button-with-user-inside.png" width="30" height="30" alt="user">
     </a>
     <a class="navbar-brand" href="https://www.facebook.com" target="_blank">
-      <img src="images\facebook.png" width="30" height="30" alt="">
+      <img src="images/facebook.png" width="30" height="30" alt="facebook">
     </a>
     <a class="navbar-brand" href="https://www.twitter.com" target="_blank">
-      <img src="images\twitter.png" width="30" height="30" alt="">
+      <img src="images/twitter.png" width="30" height="30" alt="twitter">
     </a>
     <a class="navbar-brand" href="https://www.youtube.com" target="_blank">
-      <img src="images\youtube.png" width="30" height="30" alt="">
+      <img src="images/youtube.png" width="30" height="30" alt="youtube">
     </a>
     <a class="navbar-brand" href="https://www.google.com" target="_blank">
-      <img src="images\google.png" width="30" height="30" alt="">
+      <img src="images/google.png" width="30" height="30" alt="google">
     </a>
     </div>
   </div>
@@ -47,7 +47,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color: #BEEB9F;">
     <nav class="navbar">
       <a class="navbar-brand" href="index.php">
-        <img src="images\home-icon-silhouette.png" width="30" height="30" alt="">
+        <img src="images/home-icon-silhouette.png" width="30" height="30" alt="home">
       </a>
     </nav>
 
@@ -75,7 +75,7 @@
       </div>
         <form action="search.php" method="GET" class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" name="search" placeholder="Je recherche" aria-label="Search">
-          <button value="Search" class="btn my-2 my-sm-0" name="submit" type="submit"><img src="images\search.png" alt=""></button>
+          <button value="Search" class="btn my-2 my-sm-0" name="submit" type="submit"><img src="images/search.png" alt="submit button"></button>
         </form>
 </nav>
 </header>

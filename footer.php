@@ -17,19 +17,19 @@
 
                 <div class="col-lg-8 col-md-6 col-sm-6">
                     <a class="navbar-brand" href="connexion.php">
-                    <img src="images\round-account-button-with-user-inside.png" width="30" height="30" alt="">
+                    <img src="images/round-account-button-with-user-inside.png" width="30" height="30" alt="user">
                     </a>
                     <a class="navbar-brand" href="https://www.facebook.com" target="_blank">
-                    <img src="images\facebook.png" width="30" height="30" alt="">
+                    <img src="images/facebook.png" width="30" height="30" alt="facebook">
                     </a>
                     <a class="navbar-brand" href="https://www.twitter.com" target="_blank">
-                    <img src="images\twitter.png" width="30" height="30" alt="">
+                    <img src="images/twitter.png" width="30" height="30" alt="twitter">
                     </a>
                     <a class="navbar-brand" href="https://www.youtube.com" target="_blank">
-                    <img src="images\youtube.png" width="30" height="30" alt="">
+                    <img src="images/youtube.png" width="30" height="30" alt="youtube">
                     </a>
                     <a class="navbar-brand" href="https://www.google.com" target="_blank">
-                    <img src="images\google.png" width="30" height="30" alt="">
+                    <img src="images/google.png" width="30" height="30" alt="google">
                     </a>
                 </div>
             </div>

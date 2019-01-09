@@ -2,7 +2,6 @@
 $title='Coocking';
 include 'header.php';
 ?>
-
 <body>
 <br>
 <div class="container">
@@ -14,13 +13,13 @@ include 'header.php';
     </ol>
     <div id="carousel-header" class="carousel-inner">
         <div class="carousel-item active">
-        <img class="d-block w-100 h-60" src="photos/recettes/quiche-legume-printemps.jpg" alt="Première photo">
+        <img class="d-block w-100 h-60" src="photos/recettes/quiche-legume-printemps.jpg" alt="Première photo carousel">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100 h-60" src="photos/recettes/carottes-glacees-orange.jpg" alt="Deuxième photo">
+        <img class="d-block w-100 h-60" src="photos/recettes/carottes-glacees-orange.jpg" alt="Deuxième photo carousel">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100 h-60" src="photos/recettes/penne-aux-petits-legumes.jpg" alt="Troisième photo">
+        <img class="d-block w-100 h-60" src="photos/recettes/penne-aux-petits-legumes.jpg" alt="Troisième photo carousel">
         </div>
     </div>
     </div>
