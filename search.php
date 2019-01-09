@@ -1,4 +1,5 @@
 <?php
+$title='Recherche';
 include 'header.php';
 
 include 'auth.php';
