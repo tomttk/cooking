@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <title><?=$title;?></title>
@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<body>   
 <div class="container">
   <div class="row">					
     <div class="col-lg-2 col-sm-4">
@@ -79,8 +79,7 @@
         </form>
 </nav>
 </header>
-</div>
-<body>    
+</div> 
 <?php
 include 'auth.php';
 ?>

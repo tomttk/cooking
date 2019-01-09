@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $title='Coocking';
 include 'header.php';
 ?>
@@ -38,7 +38,7 @@ include 'header.php';
                 $recette = $result->fetch(PDO::FETCH_ASSOC);
                 $image = "photos/recettes/".$recette['img'];
                 echo "<a href='recette-detail.php?idRecette=7'>";
-                echo "<img class='rounded img-thumbnail col-12' src=".$image;
+                echo "<img class='rounded img-thumbnail col-12' alt='image recette' src=".$image.">";
                 ?>
                 <?php echo '<p>'.$recette['titre'].'</p>';
                 echo '</a>';
@@ -56,7 +56,7 @@ include 'header.php';
                 $recette = $result->fetch(PDO::FETCH_ASSOC);
                 $image = "photos/recettes/".$recette['img'];
                 echo "<a href='recette-detail.php?idRecette=5'>";
-                echo "<img class='rounded img-thumbnail col-12' src=".$image;
+                echo "<img class='rounded img-thumbnail col-12' alt='image recette' src=".$image.">";
                 ?>
                 <?php echo '<p>'.$recette['titre'].'</p>';
                 echo '</a>';
@@ -74,7 +74,7 @@ include 'header.php';
                 $recette = $result->fetch(PDO::FETCH_ASSOC);
                 $image = "photos/recettes/".$recette['img'];
                 echo "<a href='recette-detail.php?idRecette=3'>";
-                echo "<img class='rounded img-thumbnail col-12' src=".$image;
+                echo "<img class='rounded img-thumbnail col-12' alt='image recette' src=".$image.">";
                 ?>
                 <?php echo '<p>'.$recette['titre'].'</p>';
                 echo '</a>';
@@ -91,7 +91,7 @@ include 'header.php';
                 $recette = $result->fetch(PDO::FETCH_ASSOC);
                 $image = "photos/recettes/".$recette['img'];
                 echo "<a href='recette-detail.php?idRecette=4'>";
-                echo "<img class='rounded img-thumbnail col-12' src=".$image;
+                echo "<img class='rounded img-thumbnail col-12' alt='image recette' src=".$image.">";
                 ?>
                 <?php echo '<p>'.$recette['titre'].'</p>';
                 echo '</a>';
@@ -113,9 +113,9 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=4'>";
-                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
-                echo '</a>';
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' alt='image membre' src='".$gravatar.">";
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
+                echo '</a>';
                 ?>
         </div>
 
@@ -125,9 +125,9 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=2'>";
-                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
-                echo '</a>';
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' alt='image membre' src='".$gravatar.">";
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
+                echo '</a>';
                 ?>
         </div>
 
@@ -137,9 +137,9 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=3'>";
-                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
-                echo '</a>';
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' alt='image membre' src='".$gravatar.">";
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
+                echo '</a>';
                 ?>
         </div>
 
@@ -149,8 +149,7 @@ include 'header.php';
                 $membres = $result->fetch(PDO::FETCH_ASSOC);
                 $gravatar = "photos/gravatars/".$membres['gravatar']."'";
                 echo "<a href='membre-detail.php?idMembre=6'>";
-                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' src='".$gravatar;
-                echo '</a>';
+                echo "<img class='rounded-circle' style='width : 100px; height : 100px;' alt='image membre' src='".$gravatar.">";
                 echo '<p>'.$membres['prenom'].' '.$membres['nom'].'</p>';
                 echo '</a>';
                 ?>
