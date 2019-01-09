@@ -13,7 +13,7 @@
 </head>
 
 <div class="container">
-  <div class="row">
+  <div class="row">					
     <div class="col-lg-2 col-sm-4">
     <a class="navbar-brand" href="index.php">
     <img src="images/logo-cooking.png" width="150" height="50" alt="logo">
@@ -80,7 +80,7 @@
 </nav>
 </header>
 </div>
-        
+<body>    
 <?php
 include 'auth.php';
 ?>

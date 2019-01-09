@@ -1,9 +1,8 @@
-<?php
+﻿<?php
 $title='Connexion';
 include 'header.php';
 ?>
 
-<body>
 <div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -80,7 +79,6 @@ include 'header.php';
 			</div>
 		</div>
 	</div>
-    </body>
 
 <?php
 //include 'auth.php';
@@ -163,8 +161,6 @@ else
 	echo "</div>";
 }
 */
-?>
 
-<?php
 include 'footer.php';
 ?>

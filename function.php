@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 function difficulteRecette (){
     include 'auth.php';
     $result = $pdo->query("SELECT difficulte FROM recettes");

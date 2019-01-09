@@ -1,9 +1,8 @@
-<?php
+﻿<?php
 $title='Membre';
 include 'header.php';
 ?>
 
-<body>
     <br>
     <div class="container">
         <div style='background-color : #EFECCA; padding-bottom : 1em;'>
@@ -34,9 +33,6 @@ include 'header.php';
             ?>
         </div>
     </div>
-</body>
-</html>
-
 <?php
 include 'footer.php';
 ?>

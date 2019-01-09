@@ -1,11 +1,8 @@
-<?php
+﻿<?php
 $title='Viande';
 include 'header.php';
 ?>
-<head>
-    <title>Viande</title>
-</head>
-<body>
+
 <div class="container">
     <div class="row">
         <div class="rowrecette" style='background-color : #EFECCA;'>
@@ -34,9 +31,7 @@ include 'header.php';
         </div>
         </div>
     </div>
-</body>
-</html>
-
+    
 <?php
 include 'footer.php';
 ?>

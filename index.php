@@ -2,7 +2,6 @@
 $title='Coocking';
 include 'header.php';
 ?>
-<body>
 <br>
 <div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -159,8 +158,6 @@ include 'header.php';
 
     </div>
     </div>
-</body>
-</html>
 
 <?php
 include 'footer.php';

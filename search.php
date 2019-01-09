@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $title='Recherche';
 include 'header.php';
 

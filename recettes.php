@@ -2,8 +2,6 @@
 $title='Recette';
 include 'header.php';
 ?>
-
-<body>
     <br>
     <div class="container">
     <div style='background-color : #EFECCA;' class="row">
@@ -203,8 +201,7 @@ include 'header.php';
                 
         </div>
 </div>
-</body>
-</html>
+
 <?php
 include 'footer.php';
 ?>

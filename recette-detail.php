@@ -1,13 +1,11 @@
-<?php
+﻿<?php
 $title='Recette';
 include 'header.php';
 ?>
 
-<body>
 <div class="container">
     <br>
     <div class="row" style='background-color : #EFECCA;'>
-    
         <div class="rowrecette">
             <?php
             include 'auth.php';
@@ -61,8 +59,6 @@ include 'header.php';
         </div>
         </div>
     </div>
-</body>
-</html>
 
 <?php
 include 'footer.php';

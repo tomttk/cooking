@@ -1,5 +1,4 @@
-<body>
-    <footer>
+﻿<footer>
         <br>
         <div class="container" style="background-color: #E6E2AF;">
             <div class="row">
