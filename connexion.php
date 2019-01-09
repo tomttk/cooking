@@ -1,10 +1,8 @@
 <?php
+$title='Connexion';
 include 'header.php';
-
 ?>
-<head>
-    <title>Connexion</title>
-</head>
+
 <body>
 
 <div class="container">

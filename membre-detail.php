@@ -1,9 +1,8 @@
 <?php
+$title='Membre';
 include 'header.php';
 ?>
-<head>
-    <title>Membre</title>
-</head>
+
 <body>
     <br>
     <div class="container">

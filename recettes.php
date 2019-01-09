@@ -1,12 +1,8 @@
 ﻿<?php
+$title='Recette';
 include 'header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <title>Recettes</title>
-</head>
 <body>
     <br>
     <div class="container">

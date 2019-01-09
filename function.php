@@ -1,9 +1,8 @@
 <?php 
-        // déclaration des fonctions
                 function difficulteRecette (){
                     include 'auth.php';
                     $result = $pdo->query("SELECT difficulte FROM recettes");
-                $recette = $result->fetch(PDO::FETCH_ASSOC);
+                    $recette = $result->fetch(PDO::FETCH_ASSOC);
                     if ($recette['difficulte'] == "Facile") {
                         echo "<div class='col-12'>";
                         echo "<p>Dificulté : <img class='rounded img-thumbnail' style='width : 40px; height : 40px;' src='images/fourchette.png'></p>";

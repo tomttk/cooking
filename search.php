@@ -1,8 +1,6 @@
 <?php
 include 'header.php';
-?>
 
-<?php
 include 'auth.php';
 $myinputs = filter_input(INPUT_GET, 'search');
     $result = $pdo->query("SELECT * FROM recettes WHERE (`titre` LIKE '%$myinputs%')");
@@ -30,8 +28,5 @@ $myinputs = filter_input(INPUT_GET, 'search');
         echo "</div>";
         echo "</div>";
     }
-?>
-
-<?php
+    
 include 'footer.php';
-?>

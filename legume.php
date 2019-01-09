@@ -1,9 +1,8 @@
 <?php
+$title='Légume';
 include 'header.php';
 ?>
-<head>
-    <title>Légumes</title>
-</head>
+
 <body>
 <div class="container">
     <div class="row">

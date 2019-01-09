@@ -1,9 +1,8 @@
 <?php
+$title='Contact';
 include 'header.php';
 ?>
-<head>
-    <title>Contact</title>
-</head>
+
 <div class="container">
 	<div class="row">
 		<form role="form" action="contact.php" method="post" id="contact-form" class="contact-form">
@@ -62,8 +61,6 @@ if(!empty($_POST)){
         echo "</div>";
     }
 }
-?>
 
-<?php
 include 'footer.php';
 ?>

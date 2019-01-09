@@ -1,12 +1,8 @@
 ﻿<?php
+$title='Coocking';
 include 'header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <title>Cooking</title>
-</head>
 <body>
 <br>
 <div class="container">
@@ -18,13 +14,13 @@ include 'header.php';
     </ol>
     <div id="carousel-header" class="carousel-inner">
         <div class="carousel-item active">
-        <img class="d-block w-100 h-60" src="photos\recettes\quiche-legume-printemps.jpg" alt="Première photo">
+        <img class="d-block w-100 h-60" src="photos/recettes/quiche-legume-printemps.jpg" alt="Première photo">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100 h-60" src="photos\recettes\carottes-glacees-orange.jpg" alt="Deuxième photo">
+        <img class="d-block w-100 h-60" src="photos/recettes/carottes-glacees-orange.jpg" alt="Deuxième photo">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100 h-60" src="photos\recettes\penne-aux-petits-legumes.jpg" alt="Troisième photo">
+        <img class="d-block w-100 h-60" src="photos/recettes/penne-aux-petits-legumes.jpg" alt="Troisième photo">
         </div>
     </div>
     </div>

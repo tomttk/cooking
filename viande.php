@@ -1,4 +1,5 @@
 <?php
+$title='Viande';
 include 'header.php';
 ?>
 <head>
