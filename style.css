@@ -35,7 +35,7 @@ p, li {
     color: #046380;
 }
 
-#login-submit, #contactbtn {
+#login-submit, #contactbtn, #register-submit {
     background-color: #046380;
     color: white;
 }

@@ -1,5 +1,5 @@
 <?php
-$title='Coocking';
+$title='Cooking';
 include 'header.php';
 ?>
 <br>

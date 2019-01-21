@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 08 jan. 2019 à 14:04
+-- Généré le :  lun. 21 jan. 2019 à 13:34
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -78,15 +78,15 @@ INSERT INTO `contact` (`id_contact`, `nom`, `email`, `message`) VALUES
 DROP TABLE IF EXISTS `membres`;
 CREATE TABLE IF NOT EXISTS `membres` (
   `idMembre` int(11) NOT NULL AUTO_INCREMENT,
-  `gravatar` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `login` varchar(32) CHARACTER SET latin1 NOT NULL,
-  `password` varchar(40) CHARACTER SET latin1 NOT NULL,
-  `statut` varchar(20) CHARACTER SET latin1 NOT NULL,
-  `prenom` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `nom` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `gravatar` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `login` varchar(32) CHARACTER SET latin1 DEFAULT NULL,
+  `password` varchar(40) CHARACTER SET latin1 DEFAULT NULL,
+  `statut` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
+  `prenom` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `nom` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   `dateCrea` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`idMembre`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `membres`
@@ -102,7 +102,8 @@ INSERT INTO `membres` (`idMembre`, `gravatar`, `login`, `password`, `statut`, `p
 (7, 'didier.png', 'did93', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'membre', 'didier', 'Eleg', '2014-05-06 02:22:18'),
 (8, 'manu.png', 'man', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'membre', 'manu', 'Bientre', '2014-05-06 02:22:18'),
 (9, 'michel.png', 'mimiche', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'membre', 'michel', 'Maluran', '2014-05-06 02:24:09'),
-(10, 'lydia.png', 'lili', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'membre', 'lydia', 'Mantour', '2014-05-06 02:24:09');
+(10, 'lydia.png', 'lili', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'membre', 'lydia', 'Mantour', '2014-05-06 02:24:09'),
+(11, '', 'admin', 'admin', 'admin', 'admin', 'admin', '2019-01-17 16:24:16');
 
 -- --------------------------------------------------------
 
@@ -113,21 +114,21 @@ INSERT INTO `membres` (`idMembre`, `gravatar`, `login`, `password`, `statut`, `p
 DROP TABLE IF EXISTS `recettes`;
 CREATE TABLE IF NOT EXISTS `recettes` (
   `idRecette` int(11) NOT NULL AUTO_INCREMENT,
-  `titre` varchar(250) CHARACTER SET latin1 NOT NULL,
-  `chapo` text CHARACTER SET latin1 NOT NULL,
-  `img` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `preparation` text CHARACTER SET latin1 NOT NULL,
-  `ingredient` text CHARACTER SET latin1 NOT NULL,
-  `membre` int(11) NOT NULL,
-  `couleur` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `titre` varchar(250) CHARACTER SET latin1 DEFAULT NULL,
+  `chapo` text CHARACTER SET latin1,
+  `img` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `preparation` text CHARACTER SET latin1,
+  `ingredient` text CHARACTER SET latin1,
+  `membre` int(11) DEFAULT NULL,
+  `couleur` varchar(30) CHARACTER SET latin1 DEFAULT NULL,
   `dateCrea` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `categorie` int(11) NOT NULL,
-  `tempsCuisson` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `tempsPreparation` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `difficulte` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `prix` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `categorie` int(11) DEFAULT NULL,
+  `tempsCuisson` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `tempsPreparation` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `difficulte` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `prix` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`idRecette`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `recettes`
@@ -143,7 +144,12 @@ INSERT INTO `recettes` (`idRecette`, `titre`, `chapo`, `img`, `preparation`, `in
 (8, 'Lotte aux lÃ©gumes gourmands', 'Les lÃ©gumes et la viande, c\'est dÃ©licieux, mais avec du poisson c\'est encore mieux. Ici, la lotte est lÃ©gÃ¨rement poÃªlÃ©e et accompagnÃ©e de lÃ©gumes croquants pour lesquels vous ne pourrez que succomber ! Ã‰quilibrÃ©e et gourmande, cette recette est Ã  tomber !', 'lotte-legumes.jpg', '<ol>\r\n<li>1\r\nFaites cuire les navets, les courgettes et les carottes 8 min, dans 1 l d\'eau bouillante salÃ©e puis ajoutez les oignons (partagÃ©s en deux) et les petits pois.\r\n</li>\r\n<li>\r\n2\r\nProlongez la cuisson 3 min avant d\'Ã©goutter les lÃ©gumes (en rÃ©servant leur eau de cuisson).\r\n</li>\r\n<li>\r\n3\r\nDisposez les dans un plat de cuisson ou vous les mÃªlerez Ã  50 g de beurre, couvrez.\r\n</li>\r\n<li>\r\n4\r\nDans du beurre faites lÃ©gÃ¨rement dorer la lotte coupÃ©e en 8 tranches. Assaisonnez puis rÃ©servez le poisson.\r\n</li>\r\n<li>\r\n5\r\nDÃ©glacez la poÃªle avec 25 cl de jus de cuisson des lÃ©gumes,portez Ã  Ã©bullition incorporez le reste du beurre.\r\n</li>\r\n<li>\r\n6\r\nServez la lotte entourÃ©e de lÃ©gumes et ajoutez quelques tomates sÃ©chÃ©es.\r\n</li>\r\n<li>\r\n7\r\nVous pouvez remplacer la lotte par bien d\'autres poissons.\r\n</li>\r\n\r\n<ol>', '<ul>\r\n<li>900 g de lotte</li>\r\n<li>500 g de petits pois Ã  Ã©cosser</li>\r\n<li>8 carottes nouvelles</li>\r\n<li>2 navets nouveaux</li>\r\n<li>250 g de courgettes</li>\r\n<li>4 oignons blancs</li>\r\n<li>3 brins de cerfeuil</li>\r\n<li>quelques tomates sÃ©chÃ©es</li>\r\n<li>100 g de beurre</li>\r\n<li>sel, poivre</li>\r\n\r\n</ul>', 1, 'fushia', '2014-05-06 03:22:06', 3, '30 min', '40 min', 'Facile', 'Pas cher'),
 (9, 'CrÃ¨me de petits pois frais', 'Si vous n\'aviez pas d\'idÃ©e pour le menu de ce soir, le repas est dÃ©sormais tout trouvÃ© ! DÃ©gustez cette crÃ¨me de petits pois et vous vous envolerez pour un voyage dans la douceur et la lÃ©gÃ¨retÃ©. Une expÃ©rience Ã  ne pas manquer !', 'creme-petits-poids.jpg', '<ol>\r\n<li>1\r\nFaÃ®tes dissoudre la tablette de bouillon dans 30 cl d\'eau chaude. Fouettez la crÃ¨me liquide trÃ¨s froide en chantilly et rÃ©servez-la au rÃ©frigÃ©rateur.\r\n<li></li>\r\n2\r\nÃ‰cossez les petits pois. Ã‰pluchez et Ã©mincez les oignons. Plongez-les dans 2 l d\'eau bouillante avec 2 c. Ã  soupe de gros sel. Laissez bouillir Ã  dÃ©couvert pendant 10 min.\r\n<li></li>\r\n3\r\nEntre temps, prÃ©parez un saladier et des glaÃ§ons.\r\n<li></li>\r\n4\r\nÃ‰gouttez rapidement les lÃ©gumes et plongez-les pendant 5 min dans de l\'eau glacÃ©e pour arrÃªter la cuisson. Ã‰gouttez Ã  nouveau. Passez-les au moulin Ã  lÃ©gumes grille fine et recueillez la purÃ©e dans une casserole.\r\n<li></li>\r\n5\r\nAjoutez le bouillon, la crÃ¨me fraÃ®che Ã©paisse et le sucre. Poivrez et portez Ã  Ã©bullition. Ajoutez 3 c. Ã  soupe de crÃ¨me chantilly et fouettez quelques secondes.\r\n<li></li>\r\n6\r\nServez aussitÃ´t. Accompagnez d\'un bol de chantilly parsemÃ©e de baies roses.\r\n</li>\r\n\r\n<ol>', '<ul>\r\n<li>1 kg de petits pois en cosse ou 400 g de petits pois Ã©cossÃ©s</li>\r\n<li>1 oignon</li>\r\n<li>1 oignon nouveau</li>\r\n<li>100 g de crÃ¨me fraÃ®che Ã©paisse</li>\r\n<li>15 cl de crÃ¨me liquide</li>\r\n<li>1 tablette de bouillon</li>\r\n<li>1 morceau de sucre</li>\r\n<li>Â¼ c. Ã  cafÃ© de baies roses concassÃ©es</li>\r\n<li>gros sel</li>\r\n<li>sel, poivre</li>\r\n\r\n</ul>', 2, 'vertClair', '2014-05-06 03:21:46', 2, '15 min', '30 min', 'Facile', 'Pas cher'),
 (10, 'Girolles Ã  la paysanne', 'Cette recette mÃªle les saveurs d\'automne avec les girolles fondantes avec les lÃ©gumes croquants des premiers beaux jours de l\'annÃ©e. Servez ce mÃ©lange gourmand avec de la viande de veau et vous verrez, le bonheur sera complet !', 'girolles-paysanne.jpg', '<ol>\r\n<li>1\r\nNettoyez les girolles sans les laver. Laissez-les entiÃ¨res. Pelez les pommes de terre et les carottes.\r\n</li><li>\r\n2\r\nLaissez les premiÃ¨res entiÃ¨res et taillez les secondes en tranches. Faites fondre le beurre dans une cocotte en fonte, placez les tranches de lard et faites-les blondir doucement.\r\n</li><li>\r\n3\r\nAjoutez les pommes de terre, les carottes, le thym, le laurier et la gousse d\'ail non pelÃ©e. Faites cuire doucement en remuant de temps en temps, pour que les lÃ©gumes se colorent lÃ©gÃ¨rement et d\'une maniÃ¨re uniforme.\r\n</li><li>\r\n4\r\nAjoutez les girolles et couvrir. (Les pommes de terre finiront de cuire en absorbant l\'eau rendue par les girolles).\r\n</li><li>\r\n5\r\nPoivrez, mais ne pas salez, Ã  cause du lard. Parsemez le fricot avec le persil et servez directement dans la cocotte.\r\n</li><li>\r\n6\r\nServez aussitÃ´t. Accompagnez d\'un bol de chantilly parsemÃ©e de baies roses.\r\n</li>\r\n\r\n<ol>', '<ul>\r\n<li>300 g de girolles</li>\r\n<li>2 tranches de poitrine de lard salÃ©e</li>\r\n<li>400 g de petites pommes de terre nouvelles</li>\r\n<li>12 petites carottes nouvelles</li>\r\n<li>1 petite gousse d\'ail</li>\r\n<li>1/2 feuille de laurier</li>\r\n<li>1 brindille de thym</li>\r\n<li>1 c. Ã  soupe de persil plat, hachÃ©</li>\r\n<li>20 g de beurre</li>\r\n<li>sel, poivre</li>\r\n\r\n</ul>', 3, 'bleuClair', '2014-05-06 03:21:46', 2, '15 min', '40 min', 'Facile', 'Pas cher'),
-(11, 'Marmelade de carottes', 'Non, vous ne faites pas erreur, la recette que nous vous proposons ici est bien une marmelade de carottes. Pleine de saveurs et de soleil, cette prÃ©paration va Ã©veiller les papilles de vos convives. Essayez-la avec un pÃ¢tÃ© de campagne, vous nous en direz des nouvelles !', 'marmelade-carottes.jpg', '<ol>\r\n<li>1\r\nLavez et pelez les carottes. Faites cuire 1 heure Ã  l\'eau bouillante. Ã‰gouttez et faites passer Ã  travers un tamis.\r\n</li><li>\r\n2\r\nFaites cuire 10 min dans la bassine Ã  confiture avec le jus de citron, la gousse de vanille et 15 cl d\'eau.\r\n</li><li>\r\n3\r\nAjoutez la purÃ©e de carottes et laissez cuire encore 30 min Ã  feu doux en remuant. Incorporez les amandes, mettez en pots et couvrez aussitÃ´t.\r\n</li>\r\n\r\n<ol>', '<ul>\r\n<li>1 kg de carottes nouvelles</li>\r\n<li>1 kg de sucre cristallisÃ©</li>\r\n<li>le jus d\'un citron</li>\r\n<li>1 gousse de vanille</li>\r\n<li>25 g d\'amandes effilÃ©es\r\n</li>\r\n\r\n</ul>', 1, 'fushia', '2014-05-06 03:21:46', 2, '1h 40 min', '30 min', 'Facile', 'Pas cher');
+(11, 'Marmelade de carottes', 'Non, vous ne faites pas erreur, la recette que nous vous proposons ici est bien une marmelade de carottes. Pleine de saveurs et de soleil, cette prÃ©paration va Ã©veiller les papilles de vos convives. Essayez-la avec un pÃ¢tÃ© de campagne, vous nous en direz des nouvelles !', 'marmelade-carottes.jpg', '<ol>\r\n<li>1\r\nLavez et pelez les carottes. Faites cuire 1 heure Ã  l\'eau bouillante. Ã‰gouttez et faites passer Ã  travers un tamis.\r\n</li><li>\r\n2\r\nFaites cuire 10 min dans la bassine Ã  confiture avec le jus de citron, la gousse de vanille et 15 cl d\'eau.\r\n</li><li>\r\n3\r\nAjoutez la purÃ©e de carottes et laissez cuire encore 30 min Ã  feu doux en remuant. Incorporez les amandes, mettez en pots et couvrez aussitÃ´t.\r\n</li>\r\n\r\n<ol>', '<ul>\r\n<li>1 kg de carottes nouvelles</li>\r\n<li>1 kg de sucre cristallisÃ©</li>\r\n<li>le jus d\'un citron</li>\r\n<li>1 gousse de vanille</li>\r\n<li>25 g d\'amandes effilÃ©es\r\n</li>\r\n\r\n</ul>', 1, 'fushia', '2014-05-06 03:21:46', 2, '1h 40 min', '30 min', 'Facile', 'Pas cher'),
+(12, 'jt', 'jy', NULL, 'jjfy', 'fjf', NULL, NULL, '2019-01-21 11:06:38', 1, 'fjt', 'fth', 'fh', 'fhts'),
+(13, 'jty', 'nkj', NULL, 'bi', 'b', NULL, NULL, '2019-01-21 12:01:18', 2, 'b', 'b', 'b', 'b'),
+(14, 'g', 'iujb', NULL, 'iub', 'bib', NULL, NULL, '2019-01-21 12:14:42', 2, 'b', 'ui', 'h', 'hj'),
+(15, 'g', 'iujb', NULL, 'iub', 'bib', NULL, NULL, '2019-01-21 12:14:58', 2, 'b', 'ui', 'h', 'hj'),
+(16, 'f', 'd', NULL, 'u', 'uu', NULL, NULL, '2019-01-21 12:15:33', 2, 'uui', 'iu', 'iu', 'ui');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
