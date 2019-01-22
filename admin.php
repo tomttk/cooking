@@ -3,6 +3,7 @@ $title='Admin';
 include 'header.php';
 include 'auth.php';
 
+
 if(!empty($_POST))
 {
         $titre = filter_input(INPUT_POST, 'titre', FILTER_SANITIZE_STRING);
