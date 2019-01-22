@@ -27,8 +27,6 @@
         $target = 'photos/recettes/'.$newname;
         move_uploaded_file($_FILES['myimg']['tmp_name'], $target);
 
-        echo ($result);
-
     }
 
     function GUID()
