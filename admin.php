@@ -1,7 +1,7 @@
 <?php
+$title='Admin';
 include 'header.php';
 include 'auth.php';
-$title='Admin';
 
 if(!empty($_POST))
 {
