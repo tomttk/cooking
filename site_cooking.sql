@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 21 jan. 2019 à 13:34
+-- Généré le :  mar. 22 jan. 2019 à 13:04
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `recettes` (
   `difficulte` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   `prix` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`idRecette`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `recettes`
@@ -149,7 +149,8 @@ INSERT INTO `recettes` (`idRecette`, `titre`, `chapo`, `img`, `preparation`, `in
 (13, 'jty', 'nkj', NULL, 'bi', 'b', NULL, NULL, '2019-01-21 12:01:18', 2, 'b', 'b', 'b', 'b'),
 (14, 'g', 'iujb', NULL, 'iub', 'bib', NULL, NULL, '2019-01-21 12:14:42', 2, 'b', 'ui', 'h', 'hj'),
 (15, 'g', 'iujb', NULL, 'iub', 'bib', NULL, NULL, '2019-01-21 12:14:58', 2, 'b', 'ui', 'h', 'hj'),
-(16, 'f', 'd', NULL, 'u', 'uu', NULL, NULL, '2019-01-21 12:15:33', 2, 'uui', 'iu', 'iu', 'ui');
+(16, 'f', 'd', NULL, 'u', 'uu', NULL, NULL, '2019-01-21 12:15:33', 2, 'uui', 'iu', 'iu', 'ui'),
+(17, 'test', 'test', NULL, 'test', 'test', NULL, NULL, '2019-01-22 12:52:16', 1, 'test', 'test', 'test', 'test');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
