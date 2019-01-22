@@ -7,7 +7,7 @@ include 'header.php';
     <div class="panel-body">
         <div class="row">
             <div class="col-lg-4">
-            <form id="register-form" action="" method="post" role="form" style="display: block;">
+            <form method="post" id="myform" action="inscription.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="text" name="prenom" id="prenom" tabindex="1" class="form-control" placeholder="Prénom" value="">
                 </div>
@@ -24,13 +24,12 @@ include 'header.php';
                     <div class="form-group">
                     <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmez le mot de passe">
                 </div>
--->
+                -->
    
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Avatar :
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Envoyer" name="submit">
-                </form>
+                <div class="form-group">
+                    <label for="categorie">Avatar</label>
+                    <input type="file" class="form-control" id="myimg" name="myimg" placeholder="Avatar">
+                </div>
 
 
                 <div class="form-group">
@@ -49,77 +48,40 @@ include 'header.php';
         </div>
 <?php
 include 'auth.php';
-$nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
-$prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
-$login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-if(!empty($_POST)){
-    $result = $pdo->exec("INSERT INTO membres ('prenom', 'nom', 'login', 'password') VALUES ('$nom', '$prenom', '$login', '$password')");
-    $membre = $result->fetch(PDO::FETCH_ASSOC);
-
-    if ($result) {
-        echo "<div class='container'>";
-        echo "<div class='row'>";
-        echo "<p>";
-        echo "Bienvenue ".$membre['prenom']." !";
-        echo "</p>";
-        echo "</div>";
-        echo "</div>";
-    } else { 
-        echo "<div class='container'>";
-        echo "<div class='row'>";
-        echo "<p>";
-        echo "Une erreur est survenue !";
-        echo "</p>";
-        echo "</div>";
-        echo "</div>";
-    }
-}
-
-$target_dir = "photos/gravatars/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "Le fichier est une image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "Le fichier n'est pas une image.";
-        $uploadOk = 0;
-    }
-}
-/*
-if($_POST)
-{
-    debug($_POST);
-    $verif_caractere = preg_match('#^[a-zA-Z0-9._-]+$#', $login); 
-    if(!$verif_caractere && (strlen($login) < 1 || strlen($login) > 20) ) // 
+    if(!empty($_POST))
     {
-        $contenu .= "<div class='erreur'>Le pseudo doit contenir entre 1 et 20 caractères. <br> Caractère accepté : Lettre de A à Z et chiffre de 0 à 9</div>";
+
+        //Récupération des données POST
+        $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
+        $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
+        $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+        //Insertion de la demande en BDD
+        $requete = "INSERT INTO membres (prenom, nom, login, password) VALUES ('$nom', '$prenom', '$login', '$password')";
+        $result = $pdo->exec($requete);
+
+        //Enregistrement de d'image
+        $info = pathinfo($_FILES['myimg']['name']);
+        $ext = $info['extension'];
+        $newname = GUID() . "." . $ext; 
+        $target = 'photos/gravatars/'.$newname;
+        move_uploaded_file($_FILES['myimg']['tmp_name'], $target);
+
+        echo '<div class="container alert-success col-2"><h5><strong>Vous êtes inscrit !</strong></h5></div>';
+
     }
-    else
+
+    function GUID()
     {
-        $membre = executeRequete("SELECT * FROM membres WHERE pseudo='$login'");
-        if($membre->num_rows > 0)
+        if (function_exists('com_create_guid') === true)
         {
-            $contenu .= "<div class='erreur'>Pseudo indisponible. Veuillez en choisir un autre svp.</div>";
+            return trim(com_create_guid(), '{}');
         }
-        else
-        {
-            // $_POST['mdp'] = md5($_POST['mdp']);
-            foreach($_POST as $indice => $valeur)
-            {
-                $_POST[$indice] = htmlEntities(addSlashes($valeur));
-            }
-            executeRequete("INSERT INTO membres (prenom, nom, login, password) VALUES ('$nom', '$prenom', '$login', '$password')");
-            $contenu .= "<div class='validation'>Vous êtes inscrit à notre site web. <a href=\"connexion.php\"><u>Cliquez ici pour vous connecter</u></a></div>";
-        }
+
+        return sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
     }
-}
-*/
+    
 include 'footer.php';
 ?>
