@@ -1,11 +1,11 @@
 <?php
+$title='Admin membres';
 include 'header.php';
 include 'auth.php';
-$title='Admin membres';
+
 
 if(!empty($_POST))
 {
-        $gravatar = filter_input(INPUT_POST, 'gravatar', FILTER_SANITIZE_STRING);
         $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $statut = filter_input(INPUT_POST, 'statut', FILTER_SANITIZE_STRING);
@@ -13,7 +13,7 @@ if(!empty($_POST))
         $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
 
         // Insertion :
-        $result = $pdo->exec("INSERT INTO membres (gravatar, login, password, statut, prenom, nom) VALUES ('$gravatar', '$login', $password, $statut, '$prenom', '$nom')");
+        $result = $pdo->exec("INSERT INTO membres (, login, password, statut, prenom, nom) VALUES ('$gravatar', '$login', $password, $statut, '$prenom', '$nom')");
         echo $result;
 
 }
@@ -28,6 +28,7 @@ if(!empty($_POST))
       <table class="table table-bordered">
         <thead>
             <tr>
+                <th scope="col">idMembre</th>
                 <th scope="col">gravatar</th>
                 <th scope="col">login</th>
                 <th scope="col">password</th>
@@ -45,6 +46,7 @@ if(!empty($_POST))
                 {
                     ?>
                         <tr>
+                            <td><?php echo $demande["idMembre"] ?></td>
                             <td><?php echo $demande["gravatar"] ?></td>
                             <td><?php echo $demande["login"] ?></td>
                             <td><?php echo $demande["password"] ?></td>

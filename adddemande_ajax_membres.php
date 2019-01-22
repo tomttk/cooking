@@ -4,8 +4,6 @@
 
     if(!empty($_POST))
     {
-
-        $gravatar = filter_input(INPUT_POST, 'gravatar', FILTER_SANITIZE_STRING);
         $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $statut = filter_input(INPUT_POST, 'statut', FILTER_SANITIZE_STRING);
@@ -13,7 +11,7 @@
         $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
 
         // Insertion :
-        $result = $pdo->exec("INSERT INTO membres (gravatar, 'login', 'password', statut, prenom, nom) VALUES ('$gravatar', '$login', $password, $statut, '$prenom', '$nom')");
+        $result = $pdo->exec("INSERT INTO membres (login, password, statut, prenom, nom) VALUES ('$login', '$password', $statut, '$prenom', '$nom')");
         $result = $pdo->exec($requete);
 
         //Enregistrement de d'image
@@ -22,9 +20,6 @@
         $newname = GUID() . "." . $ext; 
         $target = 'photos/gravatars/'.$newname;
         move_uploaded_file($_FILES['myimg']['tmp_name'], $target);
-
-        echo ($result);
-
     }
 
     function GUID()
