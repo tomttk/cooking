@@ -32,6 +32,7 @@ if(!empty($_POST))
       <table class="table table-bordered">
         <thead>
             <tr>
+                <th scope="col">idMembre</th>
                 <th scope="col">titre</th>
                 <th scope="col">chapo</th>
                 <th scope="col">img</th>
@@ -56,6 +57,7 @@ if(!empty($_POST))
                 {
                     ?>
                         <tr>
+                            <td><?php echo $demande["idRecette"] ?></td>
                             <td><?php echo $demande["titre"] ?></td>
                             <td><?php echo $demande["chapo"] ?></td>
                             <td><?php echo $demande["img"] ?></td>
@@ -184,7 +186,7 @@ if(!empty($_POST))
                 });
 
                 request.fail(function(result){
-                    alert("NOOK");
+                    alert("NOT OK");
                 });
             });
         });
@@ -222,14 +224,7 @@ if(!empty($_POST))
 		    request.done(function(result) {
 
                 let obj = jQuery.parseJSON(result);
-                
-                $("#demandeur option[value='" + obj.idPersonne + "']").prop('selected', true);
-		    	$('#type').val(obj.genre);
-                $('#ville').val(obj.ville);
-                $('#budget').val(obj.budget);
-                $('#superficie').val(obj.superficie);
-                $('#categorie').val(obj.categorie);
-                
+               
                 $('#titre').val(obj.titre);
                 $('#chapo')val(obj.chapo);
                 $('#preparation')val(obj.preparation);

@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 include 'auth.php';
-$title='Admin';
+$title='Admin membres';
 
 if(!empty($_POST))
 {
@@ -13,15 +13,15 @@ if(!empty($_POST))
         $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
 
         // Insertion :
-        $result = $pdo->exec("INSERT INTO membres (gravatar, 'login', 'password', statut, prenom, nom) VALUES ('$gravatar', '$login', $password, $statut, '$prenom', '$nom')");
+        $result = $pdo->exec("INSERT INTO membres (gravatar, login, password, statut, prenom, nom) VALUES ('$gravatar', '$login', $password, $statut, '$prenom', '$nom')");
         echo $result;
 
 }
 ?>
 <div class="container">
 <div class="row">
-    <a href="admin.php">Recettes</a><br>
-    <a href="admin_membres.php">Membres</a>
+    <a href="admin.php" style="margin-right: 2%;">Recettes</a><br>
+    <a href="admin_membres.php" style="margin-right: 2%;">Membres</a>
 </div>
       <div style="float: right;"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#md_save">Ajouter</button></div><br><br>
 
@@ -79,8 +79,8 @@ if(!empty($_POST))
                 <div class="modal-body">
 
                 <div class="form-group">
-                        <label for="gravatar">Avatar</label>
-                        <input type="text" class="form-control" id="gravatar" name="gravatar" placeholder="gravatar">
+                        <label for="categorie">Avatar</label>
+                        <input type="file" class="form-control" id="myimg" name="myimg" placeholder="Avatar">
                     </div>
 
                     <div class="form-group">

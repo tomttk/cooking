@@ -8,7 +8,6 @@ include 'auth.php';
 
             $titre = filter_input(INPUT_POST, 'titre', FILTER_SANITIZE_STRING);
             $chapo = filter_input(INPUT_POST, 'chapo', FILTER_SANITIZE_STRING);
-         
             $preparation = filter_input(INPUT_POST, 'preparation', FILTER_SANITIZE_STRING);
             $ingredient = filter_input(INPUT_POST, 'ingredient', FILTER_SANITIZE_STRING);
             $categorie = filter_input(INPUT_POST, 'categorie', FILTER_SANITIZE_STRING);
@@ -31,12 +30,14 @@ include 'auth.php';
     if(!empty($_GET))
     {
         if ($_GET['script'] == "getInfos") {
-            $result = $pdo->query("SELECT * FROM recettes WHERE idRecette = " . $_GET['idRecette']);
+            $idRecette = filter_input(INPUT_GET, 'idRecette', FILTER_SANITIZE_STRING);
+            $result = $pdo->query("SELECT * FROM recettes WHERE idRecette = " . $idRecette);
             $demande = $result->fetch(PDO::FETCH_ASSOC);
             echo json_encode($demande);
         }
         if ($_GET['script'] == "deleteDemande") {
-            $result = $pdo->exec("DELETE FROM recettes WHERE idRecette = " . $_GET['idRecette']);
+            $idRecette = filter_input(INPUT_GET, 'idRecette', FILTER_SANITIZE_STRING);
+            $result = $pdo->exec("DELETE FROM recettes WHERE idRecette = " . $idRecette);
             echo $result;
         }
     }
