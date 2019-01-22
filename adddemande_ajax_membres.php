@@ -11,7 +11,7 @@
         $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
 
         // Insertion :
-        $result = $pdo->exec("INSERT INTO membres (login, password, statut, prenom, nom) VALUES ('$login', '$password', $statut, '$prenom', '$nom')");
+        $requete = $pdo->exec("INSERT INTO membres (login, password, statut, prenom, nom) VALUES ('$login', '$password', $statut, '$prenom', '$nom')");
         $result = $pdo->exec($requete);
 
         //Enregistrement de d'image
