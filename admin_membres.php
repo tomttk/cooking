@@ -4,19 +4,7 @@ include 'header.php';
 include 'auth.php';
 
 
-if(!empty($_POST))
-{
-        $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
-        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-        $statut = filter_input(INPUT_POST, 'statut', FILTER_SANITIZE_STRING);
-        $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
-        $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
 
-        // Insertion :
-        $result = $pdo->exec("INSERT INTO membres (, login, password, statut, prenom, nom) VALUES ('$gravatar', '$login', $password, $statut, '$prenom', '$nom')");
-        echo $result;
-
-}
 ?>
 <div class="container">
 <div class="row">
