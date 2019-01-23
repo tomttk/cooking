@@ -42,18 +42,6 @@ include 'header.php';
 
                 </div>
 
-                <!--
-
-                    <div class="form-group">
-
-                    <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmez le mot de passe">
-
-                </div>
-
-                -->
-
-   
-
                 <div class="form-group">
 
                     <label>Avatar</label>
@@ -115,12 +103,12 @@ include 'auth.php';
         $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
 
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-
-
+        
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         //Insertion de la demande en BDD
 
-        $requete = "INSERT INTO membres (prenom, nom, login, password) VALUES ('$nom', '$prenom', '$login', '$password')";
+        $requete = "INSERT INTO membres (prenom, nom, login, password) VALUES ('$nom', '$prenom', '$login', '$hashed_password')";
 
         $result = $pdo->exec($requete);
 
